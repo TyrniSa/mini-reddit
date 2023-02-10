@@ -22,7 +22,13 @@ export const postSlice = createSlice({
     isLoading: false,
     hasError: false
   },
-  reducers: {},
+  reducers: {
+    filterOnSearch: (state, action) => {
+      state.posts = state.posts.filter(post =>
+        post.title.toLowerCase().includes(action.payload.toLowerCase())
+        )
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getSubReddit
@@ -61,5 +67,7 @@ export const postSlice = createSlice({
 export const selectPost = (state) => state.post.posts;
 export const selectIsLoading = (state) => state.post.isLoading;
 export const selectHasError = (state) => state.post.hasError
+
+export const {filterOnSearch} = postSlice.actions
 
 export default postSlice.reducer

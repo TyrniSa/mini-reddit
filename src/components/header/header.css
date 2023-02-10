@@ -21,13 +21,12 @@
 }
 
 
-.svgHeaderIcon {
+.headerIcon {
   width: 30px;
-  height: 30px;
-  fill: #D7DADC;
   margin-top: auto;
   margin-bottom: auto;
   padding-right: 5px;
+  border-radius: 50%;
 }
 
 .svgHeaderIcon:hover {
