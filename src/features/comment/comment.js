@@ -25,7 +25,7 @@ export const Comment = (props) => {
 comments.slice(0,10).map((comment) => (
     <li key = {comment.id}>
             <p>u/{comment.author} &#9642; {Math.round(((new Date().getTime() / 1000) - comment.created_utc) / 3600)} hr.ago</p>
-              <h4>{comment.body}</h4>
+              <p className="commentBody">{comment.body}</p>
             <p>&#128316; {comment.ups}</p>
     </li>
   ))

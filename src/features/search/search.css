@@ -1,6 +1,27 @@
 .search {
   display: inline-flex;
+  height: 3.5em;
+
 }
-.search label {
-  padding-right: 5px;;
+input{
+  font-size: 1.25em;
+  background-color: #e4e3d7;
+  padding-left: 1em;
+  border-radius: 16px;
+  width:20rem;
+  margin-left: 10rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .search {
+    height: 2.5em;
+  
+  }
+  input{
+    font-size: 1.25em;
+    background-color: #e4e3d7;
+    padding-left: 1em;
+    border-radius: 16px;
+    width:15rem;
+  }
 }

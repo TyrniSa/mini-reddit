@@ -1,4 +1,3 @@
-import './mainContainer.css'
 import {Post} from '../../features/post/post'
 
 
