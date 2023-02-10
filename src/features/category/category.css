@@ -33,3 +33,27 @@
 .categoryLi button:hover {
   color: #96031a
 }
+
+@media only screen and (max-width: 600px) {
+  .categoryIcon {
+    display:none;
+  }
+  .categoryUl {
+    padding-left: 4%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .categoryLi {
+    list-style-type: none;
+    margin: 5px;
+    background-color: #fad552;
+    border-radius: 22px;
+  }
+  .categoryLi:hover {
+    list-style-type: none;
+    margin: 5px;
+    background-color: #fac916;
+  }
+}

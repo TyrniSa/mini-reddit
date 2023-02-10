@@ -4,6 +4,7 @@
   box-shadow: 5px 5px 2px #a38f35;
   background-color: #FFFEF4;
   max-width: 700px;
+  border-radius: 22px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -127,4 +128,12 @@ width: 100%;
   background-color: #FAC916;
   border: none;
   cursor: pointer;
+}
+.footerElement a{
+  color:#bb950b;
+  text-decoration: none;
+}
+.footerElement a:hover {
+  color: #96031a;
+  font-weight: bold;
 }
