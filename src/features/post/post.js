@@ -4,7 +4,7 @@ import { getPost, selectHasError, selectIsLoading, selectPost } from './postSlic
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from "react";
 import ReactMarkdown from 'https://esm.sh/react-markdown@7'
-//import { Comment } from '../comment/comment';
+import { Comment } from '../comment/comment';
 
 
 export const Post = () => {
@@ -60,7 +60,7 @@ export const Post = () => {
                 </div>
                 <div className="footerElement">
                   <p>&#128339;</p>
-                  <p>Posted {Math.round(((new Date().getTime() / 1000) - post.created_utc) / 3600)} hours ago</p>
+                  <p>Posted {Math.round(((new Date().getTime() / 1000) - post.created_utc) / 3600)} hr.ago</p>
                 </div>
                 <div className="footerElement">
                   <p>&#128316;</p>
@@ -71,9 +71,9 @@ export const Post = () => {
                   <p><a href={`https://www.reddit.com/${post.subreddit_name_prefixed}/comments/${post.id}/${post.title}/`} target='_blank' rel="noreferrer">Go to Reddit </a></p>
                 </div>
               </div>
-              {/* <div style={display} className='comment'>
+              <div style={display} className='comment'>
                 <Comment permalink={post.permalink} />
-              </div> */}
+              </div>
             </div>
           ))
         }
