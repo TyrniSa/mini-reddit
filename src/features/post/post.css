@@ -73,7 +73,9 @@ p a {
 .postImage {
 width: 100%;
 }
-
+.noResults{
+  margin:20px;
+}
 .postVideo {
 width: 100%;
 }

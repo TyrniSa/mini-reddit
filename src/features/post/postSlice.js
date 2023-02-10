@@ -10,7 +10,6 @@ export const getPost = createAsyncThunk('posts/getPost', async () => {
 export const getSubReddit = createAsyncThunk('posts/getSubReddit', async (subreddit) => {
   const response = await axios.get(`https://www.reddit.com/r/${subreddit}.json`);
   const data = response.data.data.children.map(post => post.data);
-  console.log(data)
   return data
 })
 
@@ -27,6 +26,24 @@ export const postSlice = createSlice({
       state.posts = state.posts.filter(post =>
         post.title.toLowerCase().includes(action.payload.toLowerCase())
         )
+        if(state.posts.length<1){
+          console.log("ei tuloksia");
+          state.posts = [
+            {
+              selftext: 'Return or try searching something else!',
+              author_fullname: 't2_2yspbtwq',
+              title: 'No Results...',
+              ups: null,
+              id: '000000',
+              author: 'Tyrni',
+              num_comments: null,
+              permalink: '',
+              url: '',
+              created_utc: 0,
+              media: null,
+              is_video: false
+            }];
+        }
     }
   },
   extraReducers: (builder) => {

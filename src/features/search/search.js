@@ -19,7 +19,7 @@ export const Search =() => {
 
   return (
     <form className='search'>
-      <input type= 'text' id='search' value={searchTerm} onChange={handleOnChange} placeholder= 'Search for...'/>
+      <input type= 'text' id='search' value={searchTerm} onChange={handleOnChange} placeholder= 'Filter by title...'/>
     </form>
   )
 }

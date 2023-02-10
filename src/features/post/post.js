@@ -1,5 +1,6 @@
 import './post.css'
 import icon from '../../images/icon.jpg'
+import gif from '../../images/no-results.gif'
 import { getPost, selectHasError, selectIsLoading, selectPost } from './postSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from "react";
@@ -52,7 +53,7 @@ export const Post = () => {
 
                 {(post.url.includes('v.redd.it') || post.url.includes('i.redd.it')) ? null : <div className='postText'><ReactMarkdown>{post.selftext}</ReactMarkdown></div>}
               </div>
-              <div className="footerContainer">
+              {(post.id === '000000') ? <img className='noResults' src={gif} alt='' /> : <div className="footerContainer">
                 <div className="footerElement"><button className='button' onClick={handleComment}>
                   <p>&#128172;</p>
                   <p>{post.num_comments}</p>
@@ -71,6 +72,7 @@ export const Post = () => {
                   <p><a href={`https://www.reddit.com/${post.subreddit_name_prefixed}/comments/${post.id}/${post.title}/`} target='_blank' rel="noreferrer">Go to Reddit </a></p>
                 </div>
               </div>
+              }
               <div style={display} className='comment'>
                 <Comment permalink={post.permalink} />
               </div>
