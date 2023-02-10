@@ -1,5 +1,5 @@
 import './mainContainer.css'
-// import {Post} from '../../features/post/post'
+import {Post} from '../../features/post/post'
 
 
 
@@ -8,8 +8,7 @@ export const MainContainer = () => {
 
   return (
     <div className= 'mainContainer'>
-      {/* <Post /> */}
-      <p>Content.</p>
+      <Post />
     </div>
   )
 }

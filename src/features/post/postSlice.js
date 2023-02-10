@@ -1,18 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import axios from "axios";
 
 export const getPost = createAsyncThunk('posts/getPost', async () => {
-  const response = await fetch("https://www.reddit.com/r/all.json");
-  const json = await response.json();
-  const data = json.data.children.map(post => post.data)
-  return data
+    const response = await axios.get("https://www.reddit.com/r/all.json");
+    const data = response.data.data.children.map(post => post.data);
+    return data
 })
 
 export const getSubReddit = createAsyncThunk('posts/getSubReddit', async (subreddit) => {
-  const response = await fetch(`https://www.reddit.com/r/${subreddit}.json`);
-  const json = await response.json();
-  const data = json.data.children.map(post => post.data)
-  console.log(data);
+  const response = await axios.get(`https://www.reddit.com/r/${subreddit}.json`);
+  const data = response.data.data.children.map(post => post.data);
+  console.log(data)
   return data
 })
 
@@ -61,7 +59,7 @@ export const postSlice = createSlice({
 })
 
 export const selectPost = (state) => state.post.posts;
-export const selectPostLoading = (state) => state.post.isLoading;
+export const selectIsLoading = (state) => state.post.isLoading;
 export const selectHasError = (state) => state.post.hasError
 
 export default postSlice.reducer

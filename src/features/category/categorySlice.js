@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from 'axios';
 
 export const getCategory = createAsyncThunk('category/getCategory', async () => {
-  const response = await fetch("https://www.reddit.com/subreddits.json");
-  const json = await response.json();
-  const data =  json.data.children.map(category => category.data);
+  const response = await axios.get("https://www.reddit.com/subreddits.json");
+  const data = response.data.data.children.map(category => category.data);
   return data
 })
 
